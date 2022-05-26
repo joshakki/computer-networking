@@ -1,0 +1,9 @@
+
+chapter 1 application layer
+
+1.1 network application architectures
+        it is of two types peer to peer and the other is client-server architecture
+
+client server architectures- in this type of architectcures there is a web server serving to various host that are known as clients that can be any devie such as laptop computer etc.client contact the server by sending the information in terms of packets.so in this type of model we reqire data centes to hold a large amount of requests from clients at the same time
+
+P2P architecture - in this type of architecutre devices are not linked by any server instead they are directely linked to each other this link is known as peer..

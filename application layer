@@ -1,9 +1,22 @@
 
 chapter 1 application layer
 
-1.1 network application architectures
+1.1
+1.1.1 network application architectures
         it is of two types peer to peer and the other is client-server architecture
 
 client server architectures- in this type of architectcures there is a web server serving to various host that are known as clients that can be any devie such as laptop computer etc.client contact the server by sending the information in terms of packets.so in this type of model we reqire data centes to hold a large amount of requests from clients at the same time
 
-P2P architecture - in this type of architecutre devices are not linked by any server instead they are directely linked to each other this link is known as peer..
+P2P architecture - in this type of architecutre devices are not linked by any server instead they are directely linked to each other this link is known as peer. example Bittorrent.
+ some of the applications use hybrid structure that contain both client server architecture and P2P architecture.example many messaging apps use user IP address to track the user but the messaging content is sent directly between the user hosts.
+
+1.1.2  how process communicate
+
+programs in the end system communicate with the help of processes.these proesses communicate with each other by exchanging messages through computer network
+any process sends or receives messages by a software interface called as socket.this socket is commonly known as appliation programming interface(API).application developer controls some specific things on the network side but have full access on the application layer side.on network side the application developer controls choice of transport protocol,ability to fix maximum buffer and maximum segment sizes.to identify the address in network host is identified by its IP address that is unique for every user host 
+
+process to process reliable data transfer
+in a computer network packet loss occurs which is acceptable.this could overflow a buffer in router which leads to discard of packet by the host or host when some of the packets gets corrupted.this is not acceptable for many applications such as financial applications thus to control these kind of packet loss we provide reliable data transfer service.it ensures that data send by application at one end is received correctely at the other end of the application.
+
+throughput 
+it is equivalent to discharge i.e rate at which discharge occurs.for any process to pass on message on to network we need a minimum amount of throughput so as to maintain the connection for example in any application if we need 32 kbps then data is send and received at 32 kbps.if the traffic in transport is not allowing the throughput of 32 kbps then the call will either be disrupted or will end.

@@ -19,4 +19,88 @@ process to process reliable data transfer
 in a computer network packet loss occurs which is acceptable.this could overflow a buffer in router which leads to discard of packet by the host or host when some of the packets gets corrupted.this is not acceptable for many applications such as financial applications thus to control these kind of packet loss we provide reliable data transfer service.it ensures that data send by application at one end is received correctely at the other end of the application.
 
 throughput 
-it is equivalent to discharge i.e rate at which discharge occurs.for any process to pass on message on to network we need a minimum amount of throughput so as to maintain the connection for example in any application if we need 32 kbps then data is send and received at 32 kbps.if the traffic in transport is not allowing the throughput of 32 kbps then the call will either be disrupted or will end..
+it is equivalent to discharge i.e rate at which discharge occurs.for any process to pass on message on to network we need a minimum amount of throughput so as to maintain the connection for example in any application if we need 32 kbps then data is send and received at 32 kbps.if the traffic in transport is not allowing the throughput of 32 kbps then the call will either be disrupted or will end.
+
+transport service -
+internet makes two protocols available for the applications
+tcp and udp 
+
+1.TCP SERVICE- TRANSMISSION CONTROL PROTOCOL 
+It includes a connection oriented service and a reliable data transfer service.
+connetion oriented service-
+TCP exchange transport layer control information with the client and the server before application level messages begin to flow.this alerts both the server and the client to prepare them for the exchange of packets.after this a TCP connection is said to exits between the sockets of the process.both the server and the clients and exchange the messages simultaneously.
+2.reliable data transfer service 
+TCP helps in delivering all the data sent without any error and in proper order.
+
+SECURE SOCKETS LAYER(SSL)-
+since tcp or udp both does not provide any encryption.so to keep the data safe secure sockets layers is an enanchment to TCP.if any application wants to use the services of SSL it needs a SSL code in both the client and server sides of the application. when any application uses SSL  it passes data to SSL which encrypts the data which then passes through the network and when it reaches the server's SSL it decrypts it and then it is send to the application on the server side.
+
+UDP SERVICES 
+USER DATAGRAM PROTOCOL is an unreliable service and data sent is not necessarely in order.	
+
+HTTP - 
+HyperText Transfer Protocol it is implemented in both client and server program. it works on the TCP service. the client send message it is passed through the client's socket and then by the help of network it reaches the server's socket.this is then passed on to the server which then takes the appropriate actions as per the messages.
+	
+
+HTTP with non persistent connections
+in non persistent connections first of TCP connection is developed to make the communication of processes possible. this process occurs as follows,first of all as the client request the information from the server or triess to do any other task a small packet is sent to the server and it is then sent back to the host to establish the reliable TCP connection.this connection discontinues after each message.thus in non persistent connection this process is repeated for each and every message or request done by the client.
+
+ROUND TRIP TIME -
+it is the time taken by the small packet to travel from the client to server then back to client and again back to server to establish TCP connection.
+ 
+HTTP with persistent connection 
+in this TCP connection once established remains until the total work is completed.
+
+HTTP Message format
+
+GET /somedir/page.html HTTP/1.1
+Host: www.someschool.edu
+Connection: close
+User-agent: Mozilla/5.0
+Accept-language: fr
+
+this is a HTTP message format 
+ in each line format is - carrige returns and a line feed.	
+though message can have one to as many lines as possible.
+first line is request line and and after it are called as the Header lines
+ 
+Request line have three fields -Method field, URL field, HTTP version field.
+
+method fields indicate the method to be performed on the object identified by the URL.ex- GET  means to retrive the data. as in above example request is to get the /somedir/page.html and 1.1 is the HTML version.		
+
+connection : close defines that it does not want the connection to be persistent.
+user-agent tells us about the browser version that client is using 
+
+last is the language that the browser is working on.
+afte header line there is a entity body.its use example when a user searh words to a search engine 
+
+HTTP response message
+
+HTTP/1.1 200 OK
+Connection: close
+Date: Tue, 18 Aug 2015 15:44:04 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT
+Content-Length: 6821
+Content-Type: text/html
+
+it consists of three sections - initial status line, six header lines, then entity body which contains requested object itself.
+status line has three fields: protocol version field , status code and a corresponding status messages.
+status line indicates server and the message
+
+some common stutus codes
+
+200 O.K - request succedded and the information is returned
+301 Moved permenantely - requested object has been permenantely moved;the new URL is specified in location
+400 Bad Request - request was not understood by the server 
+
+404 not found - the requested document does not exist on the server.
+505 HTTP Version Not supported - the requested HTTP protocol version is not supported by the server.
+
+next comes the header lines 
+connection : close tells that the TCP connection is going to close after sending the message.
+date and time
+Server: Apache/2.2.3 (CentOS)   it tells that the message was generated by the apache server.
+last modified
+content length and type are the two last lines.
+

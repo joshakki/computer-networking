@@ -130,4 +130,18 @@ the SMTP on sender side sees the messege on the mail server and opens a TCP conn
 differene in HTTP and SMTP 
 
 1.HTTP is basically a PULL protocol while SMTP is push protocol. 
-2.SMTP requires every thing to be encoded in 7-bit ASCII format while therre is no such restriction for HTTP.	
+2.SMTP requires every thing to be encoded in 7-bit ASCII format while there is no such restriction for HTTP.	
+
+Mail access protocols 
+
+to read a mail user need to access the mail server so he need to do pull opertaion from the mail server. this cannot be done by the SMTP server as it is only a push protocol. so we need mail access protocols as POP3,IMAP and HTTP.
+
+POP3
+Post office protocol- version3
+its working is in three stages - authorization transaction and update.
+
+IMAP
+since POP3 delets the mail once read so to solve this problem for a user who access his mail from multiple devices IMAP was introduced so that user can create a file and move it to any location and access it while required.
+
+
+

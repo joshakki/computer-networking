@@ -145,3 +145,28 @@ since POP3 delets the mail once read so to solve this problem for a user who acc
 
 
 
+
+
+DNS ( the internet directory service)
+
+Domain name service's main task is to convert the hostname into the IP address
+
+when the user runs the client side of the DNS application browser extract the hostname from the URL and passes the host name to the client side of the DNS application. then DNS client sends a query containing the hostname to a DNS server.
+then DNS client receives IP address for the hostname after this client can initiate the TCP connection to the HTTP server process at port 80.
+
+how DNS works 
+
+DNS query is sent by the client side and the reply messege is received with the IP address.this inquiry and the reply message is sent over the UDP dategrams with port 53.
+
+single DNS server
+DNS contains all the information of the mappings of the internet.client directs all quiries to the DNS server and DNS server sents back appropriate reply to the client. it is a centralized type design but it also contains some problems.
+1. if DNS fails whole internet fails.
+2.a single server needs to handle all of the quiries coming from multiple clients.
+3.delays are directely proprotional to the distance between the client and the DNS server.
+4. needs a lot of maintaince.	
+
+ so we need a distributed database internet -
+it consists of three layered structure - root DNS sever, top-level domain DNS server, authorative DNS server.
+whenever a query is sent first it goes to one of the root servers and then it responds by the IP address of the TOP level domain server,further top level domain DNS is contacted and it responds with IP address of the authorative server.
+
+

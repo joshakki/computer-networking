@@ -169,4 +169,20 @@ DNS contains all the information of the mappings of the internet.client directs 
 it consists of three layered structure - root DNS sever, top-level domain DNS server, authorative DNS server.
 whenever a query is sent first it goes to one of the root servers and then it responds by the IP address of the TOP level domain server,further top level domain DNS is contacted and it responds with IP address of the authorative server.
 
+Local DNS server
+each ISP has a local dns server.when host connects to the isp it provides the host with IP address of one or more local dns servers
 
+DNS caching
+it is a done to lessen the dealy time.as when someone request an IP address
+ it is stored in the cache server so that if another user quiries for the same IP address it can be provided him without any delay.
+ 
+resource records
+it consists of four parts -Name, Value, Type, TTL
+
+TTL is the time to live of the resource record.it determines when to removed form a cache
+meaning of name and value depend on the type 
+ type=A the name is hostname and value is IP address for the hostname.
+ type=NS name is a domain and value is a hostname of an authoratative DNS server.
+ type=CNAME then value is a common hostname for the hostname.
+ type=MX then value is a 	
+	

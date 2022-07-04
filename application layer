@@ -184,5 +184,28 @@ meaning of name and value depend on the type
  type=A the name is hostname and value is IP address for the hostname.
  type=NS name is a domain and value is a hostname of an authoratative DNS server.
  type=CNAME then value is a common hostname for the hostname.
- type=MX then value is a 	
-	
+ type=MX then value is a email server name.
+
+
+Peer to Peer file Distribution 
+
+when a file is transferred form a server to the various hosts at the same time then it leads to the enormus amount of load at the server.so the solution to this problem is peer to peer distribution by which any device can transfer any part of the file to any system which requires that file.ex- bittorrent.
+
+di = download rate of the ith peer's access link.
+us = upload rate of server's access link.
+ui = upload rate of ith peer's access link.
+F = size of file to be distributed in bits.
+N = number of peers who want to get the copy of file.
+dmin = download rate of the peer with lowest download rate
+
+initally the server holds the file so it must transfer each bit of the file to peer so that remaining can get the access link and access the file.so minimum distribution time is at least F/us.
+a peer with lowest download rate need minimum of F/dmin 
+minimum distribution time is therefore,max of {Fus,Fdmin,NFus, NF/(us+u1+....uN)}
+
+bit torrent
+
+it is also a P2P protocol for file distribution.torrents are the peer participating in the distribution of file.peers shares a chunks from one another.each chunks size is of 256 bytes.each peer has to download all the chunks available.
+
+each torrent has a tracker which keeps all the data of the peers joining the torrent and is in torrent.
+
+
